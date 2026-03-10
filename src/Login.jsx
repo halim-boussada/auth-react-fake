@@ -11,7 +11,7 @@ export default function Login() {
       const { data } = await axios.post("https://dummyjson.com/auth/login", {
         username,
         password,
-        expiresInMins: 1, 
+        expiresInMins: 30, 
       });
       localStorage.setItem("token", data.accessToken);
       localStorage.setItem("refreshToken", data.refreshToken);
