@@ -1,0 +1,28 @@
+
+we use context to share data with child components 
+create your context 
+import { createContext } from "react";
+export const [NAME_YOUR_CONTEXT] = createContext(null);
+
+in the parent component you would go and wrap the context that you created around 
+all the childrens of the parent compoennt 
+function parent(){
+   var name = "halim"
+   var title = { 
+     a : 77,
+     b : "jjj"
+   }
+    return <div>
+    <NAME_YOUR_CONTEXT.Provider value={{ name , title }}  > 
+    <h1>hdhdah</h1>
+    <Child />
+    </NAME_YOUR_CONTEXT.Provider>
+    </div>
+}
+
+then whenever you need the shared value inside of the child compoennt 
+Child 
+
+const {title} = useContext(NAME_YOUR_CONTEXT)
+
+
